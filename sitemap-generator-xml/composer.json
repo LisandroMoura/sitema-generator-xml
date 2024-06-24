@@ -1,0 +1,18 @@
+{
+    "name": "bibolfo/sitemap-generator-xml",
+    "require": {
+        "symfony/var-dumper": "^7.1",
+        "symfony/dotenv": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\" : "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "lisandromoura",
+            "email": "lisandro.cabrom@gmail.com"
+        }
+    ]
+}

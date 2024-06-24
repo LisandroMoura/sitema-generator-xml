@@ -1,0 +1,5 @@
+/vendor/
+.env
+sitemap.xml
+mySitemap.xml
+pages.dat

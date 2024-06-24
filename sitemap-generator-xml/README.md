@@ -17,13 +17,12 @@ cd sitema-generator-xml
 composer install
 ```
 
-## 2) crie o seu .env 
+## crie o seu .env (caso queira gerar o sitemap de um banco de dados)
 
 > crie o seu arquivo .env e informe as configurações de banco de dados.
 > PS: tem um .env_exemple na pasta raiz
-> PS: se for rodar com base em um arquivo texto não precisa parametrizar seu .env
 
-## 3) Pronto só executar...
+## 2) Pronto só executar...
 
 
 ```bash
