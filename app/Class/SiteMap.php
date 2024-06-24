@@ -61,8 +61,7 @@ class SiteMap
         $query = "
         SELECT post_name as 'loc', post_modified as 'changefreq', post_type
         FROM ".$DB_DATABASE.'.'.$DB_TABLE."
-        WHERE post_type in ('post','testes','frases','textos','page')
-        AND ID not in ('8750','6350')
+        WHERE post_type in ('post','page')        
         AND post_status = 'publish';";
         $conn = new \mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
         if ($conn->connect_error) {
@@ -163,7 +162,7 @@ class SiteMap
      */
     public function fileIsImported()
     {
-        return fopen('pages.dat', 'r');
+        return fopen('example_pages.dat', 'r');
     }
 
     /**
