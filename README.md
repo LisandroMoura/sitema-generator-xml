@@ -36,3 +36,4 @@ php index.php
 
 - Caso queira editar a sua Query, edite o metodo **searchFromDatabase()** da classe **\App\Class\SiteMap.php** 
 - No exemplo, usei um banco com wordpress
+- Foi gerado um arquivo **mySitemap.xml** na pasta raiz 
