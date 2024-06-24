@@ -15,6 +15,11 @@ class SiteMap
         $this->priority = $priority;
     }
 
+    /**
+     * Criando sitemap a partir de Banco de dados.
+     *
+     * @return void
+     */
     public function buildFromDB()
     {
         $arrPosts = $this->searchFromDatabase();
@@ -41,6 +46,11 @@ class SiteMap
         return '';
     }
 
+    /**
+     * Obtendo dados do banco.
+     *
+     * @return void
+     */
     public function searchFromDatabase()
     {
         $DB_HOST = $_ENV['DB_HOST'];
@@ -67,9 +77,16 @@ class SiteMap
         }
     }
 
+    /**
+     * Finalização e fechamento do arquivo.
+     *
+     * @param [type] $strPost
+     *
+     * @return void
+     */
     public function endFile($strPost)
     {
-        $sitemapBuild = $this->getHeader().$this->getHome().$strPost.$this->getFooter();
+        $sitemapBuild = $this->getHeader().$strPost.$this->getFooter();
         $fp = fopen('mySitemap.xml', 'w');
         fwrite($fp, $sitemapBuild);
         fclose($fp);
@@ -77,11 +94,21 @@ class SiteMap
         return '';
     }
 
+    /**
+     * Formação de cabeçalho do sitemap.
+     *
+     * @return void
+     */
     public function getHeader()
     {
         return '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="https://www.w3.org/1999/xhtml">';
     }
 
+    /**
+     * Formação do primeiro registro do sitemap.
+     *
+     * @return void
+     */
     public function getHome()
     {
         return '<url>
@@ -92,11 +119,21 @@ class SiteMap
             </url>';
     }
 
+    /**
+     * Formação do footer.
+     *
+     * @return void
+     */
     public function getFooter()
     {
         return '</urlset>';
     }
 
+    /**
+     * Obtendo dados de um arquivo.
+     *
+     * @return void
+     */
     public function buildFromFile()
     {
         $arrPosts = [];
@@ -119,11 +156,23 @@ class SiteMap
         return '';
     }
 
+    /**
+     * Methodo para importar o arquivo pages.dat.
+     *
+     * @return void
+     */
     public function fileIsImported()
     {
         return fopen('pages.dat', 'r');
     }
 
+    /**
+     * Funções auxiliares - formatando data.
+     *
+     * @param [type] $dataHora
+     *
+     * @return void
+     */
     public function formatarData($dataHora)
     {
         // Cria um objeto DateTime a partir da string recebida
