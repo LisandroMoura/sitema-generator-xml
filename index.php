@@ -3,6 +3,7 @@
 require __DIR__.'/vendor/autoload.php';
 
 use App\Class\SiteMap;
+use App\Class\SiteMapImagem;
 use Symfony\Component\Dotenv\Dotenv;
 
 $dotenv = new Dotenv();
@@ -25,6 +26,10 @@ $sitemap = new SiteMap('2024-06-24T08:00:01+00:00', '0.1');
  * Gerar o sitemap com base em arquivo.
  */
 
-$sitemap->buildFromFile();
+// $sitemap->buildFromFile();
+
+$sitemapImage = new SiteMapImagem();
+
+$sitemapImage->build();
 
 echo 'feito!';

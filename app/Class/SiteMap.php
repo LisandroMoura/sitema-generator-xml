@@ -51,7 +51,7 @@ class SiteMap
      *
      * @return void
      */
-    public function searchFromDatabase()
+    public function searchFromDatabase(): object
     {
         $DB_HOST = $_ENV['DB_HOST'];
         $DB_TABLE = $_ENV['DB_TABLE'];

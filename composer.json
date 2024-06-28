@@ -6,8 +6,11 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\" : "app/"
+            "App\\": "app/"
         }
+    },
+    "scripts": {
+        "server": "php -S localhost:8829 "
     },
     "authors": [
         {
